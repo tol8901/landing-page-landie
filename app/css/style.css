@@ -6,6 +6,13 @@
           box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/roboto/Roboto.woff2") format("woff2"), url("../fonts/roboto/Roboto.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .container {
   width: 1110px;
   margin: 0 auto;
@@ -34,6 +41,7 @@ a:hover {
 .nav__list li {
   list-style: none;
   display: inline;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .nav__btn {
