@@ -1,5 +1,10 @@
 // Variables
 $main-blue: #111b47;
+$main-text-color: #091133;
+$second-text-color: #505F98;
+$main-opposite-color: white;
+$page-background-color: whitesmoke;
+// Styles
 * {
     padding: 0;
     margin: 0;
@@ -18,16 +23,49 @@ $main-blue: #111b47;
     font-family: "Roboto", Arial, sans-serif;
 }
 
-.container {
-    width: 1110px;
-    margin: 0 auto;
+.page-container {
+    background-color: $page-background-color;
+    &__page-content {
+        width: 1110px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
 }
 
-@mixin main-button {
+@mixin main-button-filled {
     background-color: $main-blue;
     color: white;
     padding: 4px 10px;
     border-radius: 2px;
+    font-size: 18px;
+}
+
+@mixin button-bigger-filled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 189px;
+    height: 26px;
+    letter-spacing: 0px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    background-color: $main-blue;
+    color: $main-opposite-color;
+    font-size: 18px;
+}
+
+@mixin button-bigger-no-filled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 189px;
+    height: 26px;
+    border: 2px solid $main-text-color;
+    padding: 4px 10px;
+    border-radius: 2px;
+    color: $main-text-color;
+    background-color: $main-opposite-color;
+    font-size: 18px;
 }
 
 a {
@@ -45,10 +83,62 @@ a {
         li {
             list-style: none;
             display: inline;
+            padding-right: 50px;
             @include font-400();
         }
     }
-    &__btn {
-        @include main-button();
+    &__btn_filled {
+        @include main-button-filled();
+        @include font-400();
+        width: 160px;
+        height: 32px;
+        text-align: center;
+    }
+    &__logo {
+        width: 40%;
+    }
+}
+
+.flex-row-s-b {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.header {
+    margin-top: 113px;
+}
+
+.description {
+    width: 539px;
+    text-align: left;
+    @include font-400();
+    letter-spacing: 1px;
+    color: $main-text-color;
+    &__header {
+        margin-top: 130px;
+    }
+    &__text {
+        margin-top: 21px;
+        margin-bottom: 73px;
+        color: $second-text-color
+    }
+    &__buttons {
+        display: flex;
+    }
+    &__purchase-ui-kit {
+        &_filled {
+            @include button-bigger-filled();
+            margin-right: 30px;
+        }
+    }
+    &__learn-more {
+        &_no-filled {
+            @include button-bigger-no-filled();
+        }
     }
 }
