@@ -1,0 +1,42 @@
+// Variables
+$main-blue: #111b47;
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+@mixin main-button {
+    background-color: $main-blue;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__list {
+        li {
+            list-style: none;
+            display: inline;
+        }
+    }
+    &__btn {
+        @include main-button();
+    }
+}
